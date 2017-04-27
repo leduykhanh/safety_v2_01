@@ -2,7 +2,7 @@
 session_start();
 include_once('config.php');
 
-if($_SESSION['adminid'])
+if(isset($_SESSION['adminid']) && $_SESSION['adminid'])
 {
     ?><script type="text/javascript">window.location.assign("listwork_activity.php")</script>
     <?php
@@ -68,7 +68,7 @@ setcookie('remember_pass', $_POST['password'], $year);
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -92,14 +92,13 @@ body {
 
                 <form name="login" id="login" method="POST" action="">
 
-                    <div class="col-sm-12">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm-8 form_pad">
+                    <div class="col-sm-12 login-form">
+                        <div class="">
                             <div style="margin-top:10px">
                                 <a href="#"><img width=150 class="center-block" src="images/logo.png"/></a>
                             </div>
 
-                            <h3 class="head_login" style="font-family:CALIBRI">Risk Assessment Management Tool</h3>
+                            <h3 class="text-center" style="font-family:CALIBRI">Risk Assessment Management Tool</h3>
                             <div class=" head_login">
 
                                         <?php
@@ -109,8 +108,7 @@ body {
                                           }
                                          ?>
                                 <div class="col-sm-12 form-row">
-                                    <div class="col-sm-4"><label style="font-family:CALIBRI">Staff ID:</label></div>
-                                    <div class="col-sm-6">
+                                    <div class="form-group">
                                         <?php if(isset($_COOKIE['remember_me']))
                                         {
                                             $cookie_me=$_COOKIE['remember_me'];
@@ -120,14 +118,12 @@ body {
                                             $cookie_me="";
                                          }
                                        ?>
-                                        <input class="span4" type="email" name="email" id="username" required value="<?php echo $cookie_me; ?>" />
+                                        <input class="form-control" type="email" name="email" id="username" required value="<?php echo $cookie_me; ?>" />
+                                        <i class="fa fa-user"></i>
                                     </div>
                                 </div>
 
-                                <div class="col-sm-12 form-row">
-                                    <div class="col-sm-4">
-                                        <label style="font-family:CALIBRI">Password</label>
-                                    </div>
+                                <div class="col-sm-12 form-group">
                                         <?php if(isset($_COOKIE['remember_pass']))
                                         {
                                             $cookie_pass=$_COOKIE['remember_pass'];
@@ -137,19 +133,13 @@ body {
                                             $cookie_pass="";
                                          }
                                        ?>
-                                    <div class="col-sm-6">
-                                        <input class="span4" type="password" name="password" id="password" required value="<?php echo $cookie_pass;?>"/>
+                                    <div class="form-group">
+                                        <input class="form-control" type="password" name="password" id="password" required value="<?php echo $cookie_pass;?>"/>
+                                        <i class="fa fa-lock"></i>
                                     </div>
                                 </div>
+                                <button type="submit" class="log-btn"><strong>Login</strong></button>
 
-                                <div class="col-sm-12 form-row" style="margin-top: 10px;">
-                                    <div class=" col-sm-6" style=" margin-left:307px; margin-top:-20px;">
-
-                                            <!-- <input  type="checkbox" name='remember' value="1"  />
-                                            Remember Me -->
-                                            <button type="submit" class="col-sm-6 btn btn-success btn-lg"><strong>Login</strong></button>
-                                            <!--<button class="button_send_documnet"><a href="forgotpassword.php"<strong>Forget Password</strong></a></button>-->
-                                    </div>
                                 </div>
                             </div>
                         </div>

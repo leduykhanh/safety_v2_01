@@ -108,14 +108,14 @@ $afterSevenYears = date('Y-m-d H:i:s', strtotime('+3 years'));
 
                           if($status==0){
 
-                            ?><a href="listwork_activity.php?status=0"><u><b>Outstanding (<?php echo $outStandingRow;?>)</b></u> </a>&nbsp;<strong>|</strong>&nbsp;
+                            ?><a href="listwork_activity.php?status=0"><u><b>Outstanding <span class="badge"><?php echo $outStandingRow;?></span></b></u> </a>&nbsp;<strong>|</strong>&nbsp;
 
                             <?php
                           }
                           else
                           {
                           ?>
-                          <a href="listwork_activity.php?status=0">Outstanding (<?php echo $outStandingRow;?>) </a>&nbsp;<strong>|</strong>&nbsp;
+                          <a href="listwork_activity.php?status=0">Outstanding <span class="badge"><?php echo $outStandingRow;?></span> </a>&nbsp;<strong>|</strong>&nbsp;
                           <?php } ?>
 
 
@@ -131,13 +131,13 @@ $afterSevenYears = date('Y-m-d H:i:s', strtotime('+3 years'));
                             ?>
 
 
-                          <a href="listwork_activity.php?status=1"><u><b> Draft (<?php echo $draftRow;?>)</b></u> </a> &nbsp;<strong>|</strong>&nbsp;
+                          <a href="listwork_activity.php?status=1"><u><b> Draft <span class="badge"><?php echo $draftRow;?></span></b></u> </a> &nbsp;<strong>|</strong>&nbsp;
                              <?php
                           }
                           else
                           {
                           ?>
-                             <a href="listwork_activity.php?status=1"> Draft (<?php echo $draftRow;?>) </a> &nbsp;<strong>|</strong>&nbsp;
+                             <a href="listwork_activity.php?status=1"> Draft <span class="badge"><?php echo $draftRow;?></span> </a> &nbsp;<strong>|</strong>&nbsp;
 
                         <?php } ?>
 
@@ -154,13 +154,13 @@ $afterSevenYears = date('Y-m-d H:i:s', strtotime('+3 years'));
 
 
 
-                          <a href="listwork_activity.php?status=2"><u><b> Approved (<?php echo $OutApprove;?>)</b></u> </a>&nbsp; <strong>|</strong>&nbsp;
+                          <a href="listwork_activity.php?status=2"><u><b> Approved <span class="badge"><?php echo $OutApprove;?></span></b></u> </a>&nbsp; <strong>|</strong>&nbsp;
                              <?php
                           }
                           else
                           {
                           ?>
-                          <a href="listwork_activity.php?status=2"> Approved (<?php echo $OutApprove;?>) </a>&nbsp; <strong>|</strong>&nbsp;
+                          <a href="listwork_activity.php?status=2"> Approved <span class="badge"><?php echo $OutApprove;?></span> </a>&nbsp; <strong>|</strong>&nbsp;
                              <?php } ?>
 
                                     <?php
@@ -177,7 +177,7 @@ $afterSevenYears = date('Y-m-d H:i:s', strtotime('+3 years'));
 
 
 
-                          <a href="listwork_activity.php?status=3"><u><b> Archived (<?php echo $OutArchived;?>)</b></u></a>    <strong>|</strong>&nbsp;
+                          <a href="listwork_activity.php?status=3"><u><b> Archived <span class="badge"><?php echo $OutArchived;?></span></b></u></a>    <strong>|</strong>&nbsp;
                              <?php
                           }
                           else
@@ -187,7 +187,7 @@ $afterSevenYears = date('Y-m-d H:i:s', strtotime('+3 years'));
 
 
 
-                             <a href="listwork_activity.php?status=3"> Archived (<?php echo $OutArchived;?>)</a>    <strong>|</strong>&nbsp;
+                             <a href="listwork_activity.php?status=3"> Archived <span class="badge"><?php echo $OutArchived;?></span></a>    <strong>|</strong>&nbsp;
                                <?php } ?>
 
 
