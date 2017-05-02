@@ -440,7 +440,7 @@ alert(attrName);
     $raMembers =(mysqli_query($con,"SELECT * FROM ramember"));
 
   ?>
-<div class="container" style="border:2px solid black;">
+<div class="container">
 
 <form method="post" action="riskmange.php" class="inlineForm" enctype="multipart/form-data" >
 
@@ -450,7 +450,7 @@ alert(attrName);
 
 
       <div class="col-sm-12 form_pad">
-                <h3>Add a New Risk Assessment</h3>
+                <h3>Add New Risk Assessment</h3>
                 <hr class="add_risk">
                 <div class="col-sm-12 form-row">
                             <div class="col-sm-6">
@@ -558,7 +558,7 @@ alert(attrName);
 
               <div class="col-sm-7"><h3 class="head_title">Work Activity 2 </h3></div>
 
-                   <button class="col-sm-2 btn btn-success addWorkActivity" id="add_new_work">+ Add a new work activity</button>
+                   <button class="col-sm-2 btn btn-success addWorkActivity" id="add_new_work"><i class="fa fa-plus" ></i> New work activity</button>
 
                    <input type="hidden" name="workactivity_a_id_1" id="workactivity_a_id_1" value="1" />
                    <input type="hidden" name="hazardsCount[]" id="hazardsCount" value="1" />
@@ -801,7 +801,7 @@ alert(attrName);
 
               <div class="col-sm-7"><h3>Work Activity 1</h3></div>
 
-                   <button class="col-sm-2 btn btn-success addWorkActivity" id="add_new_work">+ Add a new work activity</button>
+                   <button class="col-sm-2 btn btn-success addWorkActivity" id="add_new_work"><i class="fa fa-plus" ></i> New work activity</button>
 
                    <input type="hidden" name="workactivity_a_id_1" id="workactivity_a_id_1" value="" />
                    <input type="hidden" name="hazardsCount[]" id="hazardsCount" value="1" />

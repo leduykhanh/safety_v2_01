@@ -83,10 +83,8 @@ $afterSevenYears = date('Y-m-d H:i:s', strtotime('+3 years'));
    <div class="row" style="padding-bottom: 10px;">
    			<div class="col-sm-6" style="text-align:left; padding:0px"><strong>Risk Register Summary</strong></div>
   			<div class="col-sm-6 pull-right" style="text-align:right; padding:0px">
- 				<a href="divAddRemoveSubmit.php">
-              <button class="btn btn-success">
-                <strong>+ Add New Risk Assessment</strong>
-              </button>
+ 				    <a class="btn btn-success" href="divAddRemoveSubmit.php">
+              <i class="fa fa-plus" ></i> New Risk Assessment
             </a>
             </div>
     </div>
@@ -432,18 +430,18 @@ $afterSevenYears = date('Y-m-d H:i:s', strtotime('+3 years'));
 
 
 
-                                       <input <?php echo $disabled;?> type="submit" name="updateStatusSubmit" value="Click to approve" class="btn btn-danger btn-sx">
+                                       <input <?php echo $disabled;?> type="submit" name="updateStatusSubmit" value="Approve" class="btn btn-danger btn-sx">
 
 
 
 
 
-                                 &nbsp;<a href="divAddRemoveSubmitEdit.php?riskid=<?php echo $row['id'];?>" style="text-decoration: none"><input  type="button" name="updateStatusSubmit" value="Edit" class="btn btn-warning btn-sx" style="width:15%"></a>
+                                 &nbsp;<a class="btn" href="divAddRemoveSubmitEdit.php?riskid=<?php echo $row['id'];?>" style="text-decoration: none"><i class="fa fa-pencil" ></i> Edit</a>
 
-                                  &nbsp;<a href="companyreport.php?riskid=<?php echo $row['id'];?>" style="text-decoration: none"><input  type="button" name="updateStatusSubmit" value="View" class="btn btn-warning btn-sx"  style="width:15%" ></a>
+                                  &nbsp;<a class='btn' href="companyreport.php?riskid=<?php echo $row['id'];?>" style="text-decoration: none"><i class="fa fa-eye" ></i> View</a>
 
-  &nbsp;<a href="copydata.php?riskid=<?php echo $row['id'];?>&status=0&message=document sents successfully" style="text-decoration: none">
- <input  type="button" name="updateStatusSubmit" value="Copy" class="btn btn-warning btn-sx"  style="width:15%" onclick="return confirm('Are you sure,you want to copy?')" ></a>
+  &nbsp;<a class='btn' href="copydata.php?riskid=<?php echo $row['id'];?>&status=0&message=document sents successfully" style="text-decoration: none">
+ <i class="fa fa-pencil" ></i>Copy</a>
 
 
                                   </form>
@@ -453,24 +451,24 @@ $afterSevenYears = date('Y-m-d H:i:s', strtotime('+3 years'));
 
                                 if($row['status'] == 1)
                                 {
-                                  echo "<a href=\"divAddRemoveSubmitEdit.php?riskid=$row[id]\"><span class=\"btn btn-warning btn-sx cws \">Draft</span></a>";
-								  echo "<a href=\"copydata.php?riskid=$row[id]\"><span class=\"btn btn-warning btn-sm btn_new \" style=\"width: 30%;padding-bottom: 2px;padding-top: 2px;font-size: inherit;\">copy</span></a>";
+                                  echo "<a  href=\"divAddRemoveSubmitEdit.php?riskid=$row[id]\"><span class=\"btn btn-warning btn-sx cws \">Draft</span></a>";
+								  echo "<a class='btn' href=\"copydata.php?riskid=$row[id]\"><i class=\"fa fa-copy\" ></i>Copy</a>";
                                 }
 
                                 if($row['status'] == 2)
                                 {
                                   echo "<span class=\"btn btn-success btn-sm\">Approved</span>";
-                                  echo "<a href=\"divAddRemoveSubmitEdit.php?riskid=$row[id]\"><span class=\"btn btn-warning btn-sm  btn_new\">Edit</span></a>";
-								  echo "<a href=\"companyreport.php?riskid=$row[id]\"><span class=\"btn btn-warning btn-sm btn_new \">View</span></a>";
-								   echo "<a href=\"copydata.php?riskid=$row[id]\"><span class=\"btn btn-warning btn-sm btn_new \">copy</span></a>";
+                                  echo "<a class='btn' href=\"divAddRemoveSubmitEdit.php?riskid=$row[id]\"><i class=\"fa fa-pencil\" ></i> Edit</a>";
+								  echo "<a class='btn' href=\"companyreport.php?riskid=$row[id]\"><i class=\"fa fa-eye\" ></i> View</a>";
+								   echo "<a class='btn' href=\"copydata.php?riskid=$row[id]\"><i class=\"fa fa-copy\" ></i>Copy</a>";
                                 }
 
                                 if($row['status'] == 3)
                                 {
                                   echo "<span class=\"btn btn-primary btn-sx \">Archived</span>";
-                                  echo "<a href=\"divAddRemoveSubmitEdit.php?riskid=$row[id]\"><span class=\"btn btn-warning btn-sx btn_new \">Edit</span></a>";
-								  echo "<a href=\"companyreport.php?riskid=$row[id]\"><span class=\"btn btn-warning btn-sm btn_new \">View</span></a>";
-								  echo "<a href=\"copydata.php?riskid=$row[id]\"><span class=\"btn btn-warning btn-sm btn_new \">copy</span></a>";
+                                  echo "<a class='btn' href=\"divAddRemoveSubmitEdit.php?riskid=$row[id]\"><i class=\"fa fa-pencil\" ></i> Edit</a>";
+								  echo "<a class='btn' href=\"companyreport.php?riskid=$row[id]\"><i class=\"fa fa-eye\" ></i> View</a>";
+								  echo "<a class='btn' href=\"copydata.php?riskid=$row[id]\"><i class=\"fa fa-copy\" ></i>Copy</a>";
                                 }
 
                         ?></td>

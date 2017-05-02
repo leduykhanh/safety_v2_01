@@ -41,8 +41,8 @@ body {
         <span class="logout">
           Hi <strong> <i><?php error_reporting(E_ALL);
     			ini_set("display_errors", 0);
-    			echo $_SESSION["name"]; ?> </i><strong>
-    			<a href="logout.php"><button class="btn btn-danger"> Log Out</button></a>
+    			echo $_SESSION["name"]; ?> </i></strong>
+    			<a class="btn" href="logout.php"><i class="fa fa-power-off" aria-hidden="true"></i> Log Out</a>
         </span>
         </div>
         </div>

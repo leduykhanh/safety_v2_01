@@ -72,7 +72,7 @@ else
 ?>
 
 
-<div class="container" style="border:2px solid black;">
+<div class="container" >
 <div style="border:1px solid #c0c0c0; padding:0 15px; float:left;">
 <form method="post" action="riskmange.php?riskid=<?php echo $_GET['riskid'];?>" class="inlineForm" enctype="multipart/form-data">
 
