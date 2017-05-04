@@ -9,7 +9,7 @@ include_once 'constant.php';
 ?>
   <style type="text/css">
     body { padding: 10px;}
-    .clonedInput { padding: 10px; border-radius: 5px; background-color: #def;}
+    .clonedInput { padding: 10px; border-radius: 5px; background-color: #E6E6E6;}
 
 
 
@@ -455,7 +455,7 @@ alert(attrName);
                 <div class="col-sm-12 form-row">
                             <div class="col-sm-6">
                               <label class="col-sm-4">RA Leader:</label>
-                              <label class="col-sm-8"><?php echo $_SESSION['name']; ?></label>
+                              <div class="col-sm-8"><?php echo $_SESSION['name']; ?></div>
                             </div>
                 </div>
 
@@ -463,13 +463,13 @@ alert(attrName);
                           <div class="col-sm-6">
 
                             <label class="col-sm-4">Company:</label>
-                            <label class="col-sm-8">QE Safety Consultancy Pte Ltd</label>
+                            <div class="col-sm-8">QE Safety Consultancy Pte Ltd</div>
                           </div>
 
                           <div class="col-sm-6">
 
                             <label class="col-sm-4">Reference No:</label>
-                            <label class="col-sm-8">0000 (Ref. No. will be auto generated when saved.)</label>
+                            <div class="col-sm-8">0000 (Ref. No. will be auto generated when saved.)</div>
 
                           </div>
                 </div>
@@ -477,20 +477,26 @@ alert(attrName);
 
                 <div class="col-sm-12 form-row">
                           <div class="col-sm-6">
-
-                            <label class="col-sm-4">Risk Location:</label>
+                            <div class="col-sm-12 form-group float-label-control">
+                                <label class="col-sm-12" for="">Risk Location</label>
+                                <input name="location" type="text" class="form-control" placeholder="Risk Location" required>
+                            </div>
+<!--                             <label class="col-sm-4">Risk Location:</label>
                             <label class="col-sm-8">
-                              <input name="location" class="span4" type="text" id="inputSaving" placeholder="" required></label>
+                              <input name="location" class="span4" type="text" id="inputSaving" placeholder="" required></label> -->
                           </div>
 
                           <div class="col-sm-6">
-
-                            <label class="col-sm-4">Creation Date:</label>
+                              <div class="col-sm-12 form-group float-label-control">
+                                  <label class="col-sm-12" for="">Creation Date</label>
+                                  <input name="creationDate" type="text" class="span4 date form-control" placeholder="Creation Date" required>
+                              </div>                            
+<!--                             <label class="col-sm-4">Creation Date:</label>
                             <label class="col-sm-8">
                                <input name="creationDate" class="span4 date" type="text" id="creationDate" placeholder="" required></label>
 
 
-                            </label>
+                            </label> -->
 
                           </div>
                 </div>
@@ -498,19 +504,22 @@ alert(attrName);
 
                 <div class="col-sm-12 form-row">
                             <div class="col-sm-6">
-                              <label class="col-sm-4">Risk Process:</label>
+                              <div class="col-sm-12 form-group float-label-control">
+                                  <label class="col-sm-12" for="">Risk Process</label>
+                                  <input name="process" type="text" class="form-control" placeholder="Risk Process" required>
+                              </div>
+<!--                               <label class="col-sm-4">Risk Process:</label>
                               <label class="col-sm-8">
                                 <input name="process" class="span4" type="text" id="inputSaving" placeholder="" required>
-                              </label>
+                              </label> -->
                             </div>
                             <div class="col-sm-6">
                               <label class="col-sm-4 compulsary">Next Review Date:</label>
                               <select  name="expiry_date">
-                                <option value="1" selected>1</option>
-                                <option value="2" >2</option>
-                                <option value="3" >3</option>
+                                <option value="1" selected>1 year</option>
+                                <option value="2" >2 years</option>
+                                <option value="3" >3 years</option>
                               </select>
-                              <span>year(s)</span>
                             </div>
 
                 </div>
@@ -519,8 +528,8 @@ alert(attrName);
 
                <div class="col-sm-12 form-row">
 
-                  <button class="col-sm-2 btn btn-primary addMember" id="add_new_member">
-                    +Add RA Member</button>
+                  <a class="btn addMember" id="add_new_member">
+                    <i class="fa fa-plus" ></i> Add RA Member</a>
 
                </div>
 
@@ -542,7 +551,7 @@ alert(attrName);
                         </select>
                         </label>
                     </div>
-                    <button class="col-sm-1 btn btn-danger deleteMember">Remove</button>
+                    <a class="col-sm-1 btn btn-danger deleteMember"><i class="fa fa-trash"></i>Remove</a>
 
               </div>
 
@@ -554,7 +563,7 @@ alert(attrName);
 <div class="col-sm-12"> <hr class="add_risk"></div>
 
 <div style="display:none" id="toCopyDiv">
-      <div id="clonedInput1"  class=" col-sm-12 form_pad clonedInput repeatingSection tocopy">
+      <div id="clonedInput1"  class=" col-sm-12  clonedInput repeatingSection tocopy">
 
               <div class="col-sm-7"><h3 class="head_title">Work Activity 2 </h3></div>
 
@@ -797,7 +806,7 @@ alert(attrName);
 
 </div>
 
-          <div id="clonedInput1" class=" col-sm-12 form_pad clonedInput repeatingSection">
+          <div id="clonedInput1" class=" col-sm-12 clonedInput repeatingSection">
 
               <div class="col-sm-7"><h3>Work Activity 1</h3></div>
 

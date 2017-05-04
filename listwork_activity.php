@@ -238,7 +238,7 @@ $afterSevenYears = date('Y-m-d H:i:s', strtotime('+3 years'));
     <table id="dttbl"  class="table table-bordered table table-striped" style="table-layout: fixed;
     width: 100%;">
 
-        <thead style="background-color: #D7EBF9;">
+        <thead style="background-color: #A4A4A4;">
 
              <tr>
                <th  class="heading" style="width:6% !important">
