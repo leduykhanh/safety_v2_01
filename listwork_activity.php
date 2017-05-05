@@ -93,103 +93,102 @@ $afterSevenYears = date('Y-m-d H:i:s', strtotime('+3 years'));
    <div class="claer-fix"></div>
 
     <div class="row"  style="padding-bottom: 10px;">
-    		<div class="col-sm-5" style="text-align:left; padding:0px"><strong>QE Safety Consultancy Pte Ltd</strong></div>
-            <div class="col-sm-7" style="padding:0px; text-align:right;">
+      <div class="col-sm-7" style="padding:0px; text-align:left;">
 
-                          <?php
-                          $status = 0;
-                          if(isset($_GET['status']))
+                    <?php
+                    $status = 0;
+                    if(isset($_GET['status']))
 
-                          {
-                            $status=$_GET['status'];
-                          }
+                    {
+                      $status=$_GET['status'];
+                    }
 
-                          if($status==0){
+                    if($status==0){
 
-                            ?><a href="listwork_activity.php?status=0"><u><b>Outstanding <span class="badge"><?php echo $outStandingRow;?></span></b></u> </a>&nbsp;<strong>|</strong>&nbsp;
+                      ?><a href="listwork_activity.php?status=0"><u><b>Outstanding <span class="badge"><?php echo $outStandingRow;?></span></b></u> </a>&nbsp;<strong>|</strong>&nbsp;
 
-                            <?php
-                          }
-                          else
-                          {
-                          ?>
-                          <a href="listwork_activity.php?status=0">Outstanding <span class="badge"><?php echo $outStandingRow;?></span> </a>&nbsp;<strong>|</strong>&nbsp;
-                          <?php } ?>
-
+                      <?php
+                    }
+                    else
+                    {
+                    ?>
+                    <a href="listwork_activity.php?status=0">Outstanding <span class="badge"><?php echo $outStandingRow;?></span> </a>&nbsp;<strong>|</strong>&nbsp;
+                    <?php } ?>
 
 
-                             <?php
-                          if(isset($_GET['status']))
 
-                          {
-                            $status=$_GET['status'];
-                          }
+                       <?php
+                    if(isset($_GET['status']))
 
-                          if($status==1){
-                            ?>
+                    {
+                      $status=$_GET['status'];
+                    }
+
+                    if($status==1){
+                      ?>
 
 
-                          <a href="listwork_activity.php?status=1"><u><b> Draft <span class="badge"><?php echo $draftRow;?></span></b></u> </a> &nbsp;<strong>|</strong>&nbsp;
-                             <?php
-                          }
-                          else
-                          {
-                          ?>
-                             <a href="listwork_activity.php?status=1"> Draft <span class="badge"><?php echo $draftRow;?></span> </a> &nbsp;<strong>|</strong>&nbsp;
+                    <a href="listwork_activity.php?status=1"><u><b> Draft <span class="badge"><?php echo $draftRow;?></span></b></u> </a> &nbsp;<strong>|</strong>&nbsp;
+                       <?php
+                    }
+                    else
+                    {
+                    ?>
+                       <a href="listwork_activity.php?status=1"> Draft <span class="badge"><?php echo $draftRow;?></span> </a> &nbsp;<strong>|</strong>&nbsp;
 
-                        <?php } ?>
+                  <?php } ?>
 
+
+                        <?php
+                    if(isset($_GET['status']))
+
+                    {
+                      $status=$_GET['status'];
+                    }
+
+                    if($status==2){
+                      ?>
+
+
+
+                    <a href="listwork_activity.php?status=2"><u><b> Approved <span class="badge"><?php echo $OutApprove;?></span></b></u> </a>&nbsp; <strong>|</strong>&nbsp;
+                       <?php
+                    }
+                    else
+                    {
+                    ?>
+                    <a href="listwork_activity.php?status=2"> Approved <span class="badge"><?php echo $OutApprove;?></span> </a>&nbsp; <strong>|</strong>&nbsp;
+                       <?php } ?>
 
                               <?php
-                          if(isset($_GET['status']))
+                    if(isset($_GET['status']))
 
-                          {
-                            $status=$_GET['status'];
-                          }
+                    {
+                      $status=$_GET['status'];
+                    }
 
-                          if($status==2){
-                            ?>
-
-
-
-                          <a href="listwork_activity.php?status=2"><u><b> Approved <span class="badge"><?php echo $OutApprove;?></span></b></u> </a>&nbsp; <strong>|</strong>&nbsp;
-                             <?php
-                          }
-                          else
-                          {
-                          ?>
-                          <a href="listwork_activity.php?status=2"> Approved <span class="badge"><?php echo $OutApprove;?></span> </a>&nbsp; <strong>|</strong>&nbsp;
-                             <?php } ?>
-
-                                    <?php
-                          if(isset($_GET['status']))
-
-                          {
-                            $status=$_GET['status'];
-                          }
-
-                          if($status==3){
-                            ?>
+                    if($status==3){
+                      ?>
 
 
 
 
 
-                          <a href="listwork_activity.php?status=3"><u><b> Archived <span class="badge"><?php echo $OutArchived;?></span></b></u></a>    <strong>|</strong>&nbsp;
-                             <?php
-                          }
-                          else
-                          {
-                          ?>
+                    <a href="listwork_activity.php?status=3"><u><b> Archived <span class="badge"><?php echo $OutArchived;?></span></b></u></a>    <strong>|</strong>&nbsp;
+                       <?php
+                    }
+                    else
+                    {
+                    ?>
 
 
 
 
-                             <a href="listwork_activity.php?status=3"> Archived <span class="badge"><?php echo $OutArchived;?></span></a>    <strong>|</strong>&nbsp;
-                               <?php } ?>
+                       <a href="listwork_activity.php?status=3"> Archived <span class="badge"><?php echo $OutArchived;?></span></a>    <strong>|</strong>&nbsp;
+                         <?php } ?>
 
 
-              </div>
+        </div>
 
               <div class="claer-fix"></div>
     </div>

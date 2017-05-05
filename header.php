@@ -34,18 +34,21 @@ body {
 
 <body>
     <div class="container">
-        <div class="row">
-        <div class="col-sm-2">
-        <div class="logo"><a href="index.php"><img src="images/logo.png"/></a></div>
-        </div>
-        <div class="col-sm-10">
-        <span class="logout">
-          Hi <strong> <i><?php error_reporting(E_ALL);
-    			ini_set("display_errors", 0);
-    			echo $_SESSION["name"]; ?> </i></strong>
-    			<a class="btn" href="logout.php"><i class="fa fa-power-off" aria-hidden="true"></i> Log Out</a>
-        </span>
-        </div>
+        <div class="row" style="display:flex;">
+            <div class="col-sm-2">
+                <div class="logo"><a href="index.php"><img src="images/logo.png"/></a></div>
+            </div>
+            <div class="col-sm-7" style="text-align: center;padding: 50px 0;">
+                <strong style="font-size:30px;">QE Safety Consultancy Pte Ltd</strong>
+            </div>
+            <div class="col-sm-3">
+                <span class="logout">
+                  Hi <strong> <i><?php error_reporting(E_ALL);
+            			ini_set("display_errors", 0);
+            			echo $_SESSION["name"]; ?> </i></strong>
+            			<a class="btn" href="logout.php"><i class="fa fa-power-off" aria-hidden="true"></i> Log Out</a>
+                </span>
+            </div>
         </div>
 
 
