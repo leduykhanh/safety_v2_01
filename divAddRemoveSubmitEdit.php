@@ -10,7 +10,7 @@ include_once 'constant.php';
 ?>
   <style type="text/css">
     body { padding: 10px;}
-    .clonedInput { border-radius: 5px; background-color: #def;}
+    .clonedInput { border-radius: 5px; background-color: #E6E6E6;}
 
 
 
@@ -103,7 +103,7 @@ else
                     <div class="col-sm-6">
                         <div class="row">
                           <label class="col-sm-4">RA Leader:</label>
-                          <label class="col-sm-8"><?php echo $valueUser['name']; ?></label>
+                          <div class="col-sm-8"><?php echo $valueUser['name']; ?></div>
                         </div>
                     </div>
                 </div>
@@ -112,14 +112,14 @@ else
                           <div class="col-sm-6">
 							<div class="row">
                             <label class="col-sm-4">Company:</label>
-                            <label class="col-sm-8">QE Safety Consultancy Pte Ltd</label>
+                            <div class="col-sm-8">QE Safety Consultancy Pte Ltd</div>
                             </div>
                           </div>
 
                           <div class="col-sm-6">
 
                             <label class="col-sm-4">Reference No:</label>
-                            <label class="col-sm-8">00<?php echo $valueRisk['id'];?></label>
+                            <div class="col-sm-8">00<?php echo $valueRisk['id'];?></div>
 
                           </div>
                 </div>
@@ -127,30 +127,43 @@ else
 
                 <div class="row form-row">
                           <div class="col-sm-6">
-<div class="row">
-                            <label class="col-sm-4">Location:</label>
-                            <label class="col-sm-8">
+                            <div class="col-sm-12 form-group float-label-control">
+                                <label class="col-sm-12" for="">Risk Location</label>
+                                <input name="location" value="<?php echo $valueRisk['location'];?>" type="text" class="form-control" placeholder="Risk Location" required>
+                            </div>
+<!--                               <div class="row">
+                                <label class="col-sm-4">Location:</label>
+                                <label class="col-sm-8">
                               <input name="location" class="span4" type="text" id="inputSaving" placeholder="" required value="<?php echo $valueRisk['location'];?>"></label>
-                              </div>
+                              </div> -->
                           </div>
 
                           <div class="col-sm-6">
                           <?php if ($valueRisk["status"] =="2") { ?>
-                            <label class="col-sm-4">Review Date:</label>
+                              <div class="col-sm-12 form-group float-label-control">
+                                  <label class="col-sm-12" for="">Review Date</label>
+                                  <input name="creationDate" type="hidden" class="span4 date form-control" placeholder="Creation Date" value="<?php echo date('d-m-Y', strtotime($valueRisk['createdDate']));?>" required>
+                                  <input name="revisionDate" type="text" class="span4 date form-control" placeholder="Review Date" value="<?php echo date('d-m-Y', strtotime($valueRisk['revisionDate']));?>" required>
+                              </div>  
+<!--                             <label class="col-sm-4">Review Date:</label>
                             <label class="col-sm-8">
                                <input name="revisionDate" class="span4 date" type="text" id="revisionDate" placeholder="" required value="<?php echo date('d-m-Y', strtotime($valueRisk['revisionDate']));?>">
                                <input name="creationDate" class="span4 date" type="hidden" id="creationDate" placeholder="" required value="<?php echo date('d-m-Y', strtotime($valueRisk['createdDate']));?>"></label>
 
-                            </label>
+                            </label> -->
 
 
                             
                             <?php } 
                             else {
                               ?>
-                              <label class="col-sm-4">Creation Date:</label>
+                              <div class="col-sm-12 form-group float-label-control">
+                                  <label class="col-sm-12" for="">Creation Date</label>
+                                  <input name="creationDate" type="text" class="span4 date form-control" placeholder="Creation Date" required value="<?php echo date('d-m-Y', strtotime($valueRisk['createdDate']));?>"> 
+                              </div>                                
+                <!--               <label class="col-sm-4">Creation Date:</label>
                             <label class="col-sm-8">
-                               <input name="createdDate" class="span4 date" type="text" id="createdDate" placeholder="" required value="<?php echo date('d-m-Y', strtotime($valueRisk['createdDate']));?>"></label>
+                               <input name="createdDate" class="span4 date" type="text" id="createdDate" placeholder="" required value="<?php echo date('d-m-Y', strtotime($valueRisk['createdDate']));?>"></label> -->
 
 
                             
@@ -162,28 +175,32 @@ else
 
                 <div class="row form-row">
                             <div class="col-sm-6">
-                            <div class="row">
+                              <div class="col-sm-12 form-group float-label-control">
+                                  <label class="col-sm-12" for="">Risk Process</label>
+                                  <input name="process"  value="<?php echo $valueRisk['process'];?>" type="text" class="form-control" placeholder="Risk Process" required>
+                              </div>
+<!--                             <div class="row">
                               <label class="col-sm-4">Risk Process:</label>
                               <label class="col-sm-8">
                                 <input name="process" class="span4" type="text" id="inputSaving" placeholder="" required value="<?php echo $valueRisk['process'];?>">
                               </label>
-                              </div>
+                              </div> -->
                             </div>
                             <div class="col-sm-6">
                               <label class="col-sm-4 compulsary">Next Review Date:</label>
                               <select  name="expiry_date">
-                                <option value="1" <?php echo $valueRisk['expiry_date']==1?"selected":"";?>>1</option>
-                                <option value="2" <?php echo $valueRisk['expiry_date']==2?"selected":"";?>>2</option>
-                                <option value="3" <?php echo $valueRisk['expiry_date']==3?"selected":"";?>>3</option>
+                                <option value="1" <?php echo $valueRisk['expiry_date']==1?"selected":"";?>>1 year</option>
+                                <option value="2" <?php echo $valueRisk['expiry_date']==2?"selected":"";?>>2 years</option>
+                                <option value="3" <?php echo $valueRisk['expiry_date']==3?"selected":"";?>>3 years</option>
                               </select>
-                              <span>year(s)</span>
+                              
                             </div>
                 </div>
       </div>
 
 <div class="row"><div class="col-sm-12"> <hr class="add_activity"></div></div>
-   <button class="col-sm-2 btn btn-primary addMember" id="add_new_member" style="margin-bottom:10px">
-        +Add RA Member</button>
+   <a class="btn addMember" id="add_new_member">
+                    <i class="fa fa-plus" ></i> Add RA Member</a>
               <?php
 
               if(mysqli_num_rows($resultRAMember) > 0)
@@ -253,7 +270,7 @@ while($valueAllWork = mysqli_fetch_assoc($resultAllWork))
 {
 ?>        <div id="clonedInput1" class="col-sm-12 form_pad clonedInput repeatingSection">
               <div class="col-sm-7"><h3 class="workActivityName">Work Activity <?php echo $wrk_act;?></h3></div>
-                   <button class="col-sm-2 btn btn-success addWorkActivity" id="add_new_work" style="margin-top:15px;">+ Add a new work activity</button>
+                   <button class="col-sm-2 btn btn-success addWorkActivity" id="add_new_work" style="margin-top:15px;"><i class="fa fa-plus" ></i>New work activity</button>
 
                    <input type="hidden" name="workactivity_a_id_1" id="workactivity_a_id_1" value="" />
 
@@ -274,8 +291,11 @@ while($valueAllWork = mysqli_fetch_assoc($resultAllWork))
                    ?>
                    <input type="hidden" name="hazardsCount[]" id="hazardsCount" value="<?php echo $numHazardsCount;?>" />
                    <input type="hidden"  id="work_activity_id" value="<?php echo $wrk_act; ?>" />
-
-                  <button class="col-sm-2 btn btn-danger  deleteWorkActivity" style="margin-left:5px; margin-top:15px;">Remove work activity</button>
+                   <div class="col-sm-2"></div>
+                   <div class="col-sm-2">
+                      <a class="btn btn-danger  deleteWorkActivity" style="margin-left:5px; margin-top:15px;"><i class="fa fa-trash" ></i>Delete</a>
+                   </div>
+                  
 
                     <div class="row">
                     <div class="col-sm-12">
