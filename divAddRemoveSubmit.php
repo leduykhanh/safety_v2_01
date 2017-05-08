@@ -797,8 +797,8 @@ alert(attrName);
 
 
                        <div class="clearfix"></div>
-                       <button class="col-sm-2 btn btn-success addHazards" id="add_new_work">+ Add hazards</button>
-                       <button class="col-sm-2 btn btn-danger pull-right deleteHazards">Remove Hazards</button>
+                       <a class="btn addHazards" id="add_new_work"><i class="fa fa-plus" > Add hazards</a>
+                       <button class="btn btn-danger pull-right deleteHazards">Remove Hazards</button>
                       <div class="clearfix"></div>
                         <hr class="add_activity"/>
                   </div>
@@ -817,7 +817,7 @@ alert(attrName);
 
               <div class="col-sm-3"></div>
                <div class="col-sm-2 text-right">
-                  <a class="btn btn-danger  deleteWorkActivity" style="margin-left:5px; margin-top:15px;"><i class="fa fa-trash" ></i>Delete</a>
+                  <a class="btn btn-danger  deleteWorkActivity" style="margin-left:5px; margin-top:15px;"><i class="fa fa-trash" ></i> Delete</a>
                </div>
 
 
