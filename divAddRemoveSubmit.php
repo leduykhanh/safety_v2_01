@@ -567,7 +567,7 @@ alert(attrName);
 
               <div class="col-sm-7"><h3 class="head_title">Work Activity 2 </h3></div>
 
-                   <button class="col-sm-2 btn btn-success addWorkActivity" id="add_new_work"><i class="fa fa-plus" ></i> New work activity</button>
+                   <button class="col-sm-2 btn addWorkActivity" id="add_new_work"><i class="fa fa-plus" ></i> New work activity</button>
 
                    <input type="hidden" name="workactivity_a_id_1" id="workactivity_a_id_1" value="1" />
                    <input type="hidden" name="hazardsCount[]" id="hazardsCount" value="1" />
@@ -810,15 +810,15 @@ alert(attrName);
 
               <div class="col-sm-7"><h3>Work Activity 1</h3></div>
 
-                   <button class="col-sm-2 btn btn-success addWorkActivity" id="add_new_work"><i class="fa fa-plus" ></i> New work activity</button>
+               <button class="col-sm-2 btn addWorkActivity" id="add_new_work"><i class="fa fa-plus" ></i> New work activity</button>
 
-                   <input type="hidden" name="workactivity_a_id_1" id="workactivity_a_id_1" value="" />
-                   <input type="hidden" name="hazardsCount[]" id="hazardsCount" value="1" />
+               <input type="hidden" name="workactivity_a_id_1" id="workactivity_a_id_1" value="" />
+               <input type="hidden" name="hazardsCount[]" id="hazardsCount" value="1" />
 
-
-
-
-                  <button class="col-sm-2 btn btn-danger deleteWorkActivity" style="margin-left: 5px;">Remove work activity</button>
+              <div class="col-sm-3"></div>
+               <div class="col-sm-2 text-right">
+                  <a class="btn btn-danger  deleteWorkActivity" style="margin-left:5px; margin-top:15px;"><i class="fa fa-trash" ></i>Delete</a>
+               </div>
 
 
                     <div class="col-sm-12">
@@ -1043,10 +1043,10 @@ alert(attrName);
 
 
 
-                        <input class="btn btn-success draft" type="submit" value="Save as Draft" name="saveAsDraft"  >
+                        <input class="btn draft" type="submit" value="Save as Draft" name="saveAsDraft"  >
 
-                         <input class="btn btn-success draft" type="submit" value="Next" name="saveAsDraft" style="padding-left:30px; padding-right:30px;"  >
-                         <input class="btn btn-danger" type="submit" id="cancel" value="Cancel" name="Cancel"   style="padding-left:30px; padding-right:30px;"   >
+                         <input class="btn draft" type="submit" value="Next" name="saveAsDraft" style="padding-left:30px; padding-right:30px;"  >
+                         <input class="btn " type="submit" id="cancel" value="Cancel" name="Cancel"   style="padding-left:30px; padding-right:30px;"   >
 
 
 

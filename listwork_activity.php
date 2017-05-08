@@ -83,7 +83,7 @@ $afterSevenYears = date('Y-m-d H:i:s', strtotime('+3 years'));
    <div class="row" style="padding-bottom: 10px;">
    			<div class="col-sm-6" style="text-align:left; padding:0px"><strong>Risk Register Summary</strong></div>
   			<div class="col-sm-6 pull-right" style="text-align:right; padding:0px">
- 				    <a class="btn btn-success" href="divAddRemoveSubmit.php">
+ 				    <a class="btn" href="divAddRemoveSubmit.php">
               <i class="fa fa-plus" ></i> New Risk Assessment
             </a>
             </div>

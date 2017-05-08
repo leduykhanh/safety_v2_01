@@ -187,7 +187,7 @@ else
                               </div> -->
                             </div>
                             <div class="col-sm-6">
-                              <label class="col-sm-4 compulsary">Next Review Date:</label>
+                              <label class="col-sm-6 compulsary">Next Review Date:</label>
                               <select  name="expiry_date">
                                 <option value="1" <?php echo $valueRisk['expiry_date']==1?"selected":"";?>>1 year</option>
                                 <option value="2" <?php echo $valueRisk['expiry_date']==2?"selected":"";?>>2 years</option>
@@ -270,7 +270,7 @@ while($valueAllWork = mysqli_fetch_assoc($resultAllWork))
 {
 ?>        <div id="clonedInput1" class="col-sm-12 form_pad clonedInput repeatingSection">
               <div class="col-sm-7"><h3 class="workActivityName">Work Activity <?php echo $wrk_act;?></h3></div>
-                   <button class="col-sm-2 btn btn-success addWorkActivity" id="add_new_work" style="margin-top:15px;"><i class="fa fa-plus" ></i>New work activity</button>
+                   <button class="col-sm-2 btn addWorkActivity" id="add_new_work" style="margin-top:15px;"><i class="fa fa-plus" ></i>New work activity</button>
 
                    <input type="hidden" name="workactivity_a_id_1" id="workactivity_a_id_1" value="" />
 
@@ -291,8 +291,8 @@ while($valueAllWork = mysqli_fetch_assoc($resultAllWork))
                    ?>
                    <input type="hidden" name="hazardsCount[]" id="hazardsCount" value="<?php echo $numHazardsCount;?>" />
                    <input type="hidden"  id="work_activity_id" value="<?php echo $wrk_act; ?>" />
-                   <div class="col-sm-2"></div>
-                   <div class="col-sm-2">
+                   <div class="col-sm-3"></div>
+                   <div class="col-sm-2 text-right">
                       <a class="btn btn-danger  deleteWorkActivity" style="margin-left:5px; margin-top:15px;"><i class="fa fa-trash" ></i>Delete</a>
                    </div>
                   
@@ -734,10 +734,10 @@ $wrk_act ++;
 
 
 
-                        <input class="btn btn-success draft" type="submit" value="Save as Draft" name="saveAsDraft"  >
+                        <input class="btn  draft" type="submit" value="Save as Draft" name="saveAsDraft"  >
 
-                         <input class="btn btn-success draft" type="submit" value="Next" name="saveAsDraft" style="padding-left:30px; padding-right:30px;"  >
-                         <input class="btn btn-danger" type="submit" id="cancel" value="Cancel" name="Cancel"   style="padding-left:30px; padding-right:30px;"   >
+                         <input class="btn  draft" type="submit" value="Next" name="saveAsDraft" style="padding-left:30px; padding-right:30px;"  >
+                         <input class="btn " type="submit" id="cancel" value="Cancel" name="Cancel"   style="padding-left:30px; padding-right:30px;"   >
 
 
                     </div>
