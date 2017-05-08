@@ -558,8 +558,8 @@ $cntval = 1;
                       <div class="col-sm-12 form-row">
 
                         <div class="row col-sm-12 form-row">
-                          <button class="col-sm-2 btn btn-primary addActionMember" id="add_new_member">+Action Officer</button>
-                          <button class="col-sm-2 col-sm-offset-1 btn btn-primary addOtherActionMember" id="add_new_other_member">Add Others</button>
+                          <a class="col-sm-2 btn addActionMember" id="add_new_member"><i class="fa fa-plus"></i>Action Officer</a>
+                          <a class="col-sm-2 col-sm-offset-1 btn addOtherActionMember" id="add_new_other_member"><i class="fa fa-plus"></i> Others</a>
                           <div class="col-sm-1"></div>
                           <div class="col-sm-6">
                             <label class="col-sm-6">Action Date:</label>
