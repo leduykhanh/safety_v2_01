@@ -12,10 +12,10 @@
     <div class="container">
  
         <div class="navbar-header">
-            <a class="navbar-brand" href="hyyp://jangkoo.com" title='Programming Blog'>Edit</a>
-            <a class="navbar-brand" href="hyyp://jangkoo.com/search/label/CRUD">Your</a>
-            <a class="navbar-brand" href="hyyp://jangkoo.com/search/label/PDO">Employee</a>
-            <a class="navbar-brand" href="hyyp://jangkoo.com/search/label/jQuery">Data</a>
+            <a class="navbar-brand" href="http://jangkoo.com" title='Programming Blog'>Edit</a>
+            <a class="navbar-brand" href="http://jangkoo.com/search/label/CRUD">Your</a>
+            <a class="navbar-brand" href="http://jangkoo.com/search/label/PDO">Employee</a>
+            <a class="navbar-brand" href="http://jangkoo.com/search/label/jQuery">Data</a>
         </div>
  
     </div>
