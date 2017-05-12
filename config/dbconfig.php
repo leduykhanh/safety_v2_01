@@ -3,7 +3,7 @@
 $DB_host = "localhost";
 $DB_user = "root";
 $DB_pass = "";
-$DB_name = "dbpdo";
+$DB_name = "safety_v2_01";
 
 
 try

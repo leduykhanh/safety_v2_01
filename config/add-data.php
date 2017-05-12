@@ -2,12 +2,9 @@
 include_once 'dbconfig.php';
 if(isset($_POST['btn-save']))
 {
-	$fname = $_POST['first_name'];
-	$lname = $_POST['last_name'];
-	$email = $_POST['email_id'];
-	$contact = $_POST['contact_no'];
+	$description = $_POST['description'];
 	
-	if($crud->create($fname,$lname,$email,$contact))
+	if($crud->create($description))
 	{
 		header("Location: add-data.php?inserted");
 	}
@@ -53,25 +50,10 @@ else if(isset($_GET['failure']))
     <table class='table table-bordered'>
  
         <tr>
-            <td>First Name</td>
-            <td><input type='text' name='first_name' class='form-control' required></td>
+            <td>Description</td>
+            <td><input type='text' name='description' class='form-control' required></td>
         </tr>
- 
-        <tr>
-            <td>Last Name</td>
-            <td><input type='text' name='last_name' class='form-control' required></td>
-        </tr>
- 
-        <tr>
-            <td>Your E-mail ID</td>
-            <td><input type='text' name='email_id' class='form-control' required></td>
-        </tr>
- 
-        <tr>
-            <td>Contact No</td>
-            <td><input type='text' name='contact_no' class='form-control' required></td>
-        </tr>
- 
+
         <tr>
             <td colspan="2">
             <button type="submit" class="btn btn-primary" name="btn-save">

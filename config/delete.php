@@ -47,23 +47,17 @@ if(isset($_POST['btn-del']))
          <table class='table table-bordered'>
          <tr>
          <th>#</th>
-         <th>First Name</th>
-         <th>Last Name</th>
-         <th>E - mail ID</th>
-         <th>Gender</th>
+         <th>description</th>
          </tr>
          <?php
-         $stmt = $DB_con->prepare("SELECT * FROM tbl_users WHERE id=:id");
+         $stmt = $DB_con->prepare("SELECT * FROM lkup_hazard WHERE id=:id");
          $stmt->execute(array(":id"=>$_GET['delete_id']));
          while($row=$stmt->fetch(PDO::FETCH_BOTH))
          {
              ?>
              <tr>
              <td><?php print($row['id']); ?></td>
-             <td><?php print($row['first_name']); ?></td>
-             <td><?php print($row['last_name']); ?></td>
-             <td><?php print($row['email_id']); ?></td>
-         	 <td><?php print($row['contact_no']); ?></td>
+             <td><?php print($row['description']); ?></td>
              </tr>
              <?php
          }

@@ -9,15 +9,12 @@ class crud
 		$this->db = $DB_con;
 	}
 	
-	public function create($fname,$lname,$email,$contact)
+	public function create($description)
 	{
 		try
 		{
-			$stmt = $this->db->prepare("INSERT INTO tbl_users(first_name,last_name,email_id,contact_no) VALUES(:fname, :lname, :email, :contact)");
-			$stmt->bindparam(":fname",$fname);
-			$stmt->bindparam(":lname",$lname);
-			$stmt->bindparam(":email",$email);
-			$stmt->bindparam(":contact",$contact);
+			$stmt = $this->db->prepare("INSERT INTO lkup_hazard(description) VALUES(:description)");
+			$stmt->bindparam(":description",$description);
 			$stmt->execute();
 			return true;
 		}
@@ -31,25 +28,19 @@ class crud
 	
 	public function getID($id)
 	{
-		$stmt = $this->db->prepare("SELECT * FROM tbl_users WHERE id=:id");
+		$stmt = $this->db->prepare("SELECT * FROM lkup_hazard WHERE id=:id");
 		$stmt->execute(array(":id"=>$id));
 		$editRow=$stmt->fetch(PDO::FETCH_ASSOC);
 		return $editRow;
 	}
 	
-	public function update($id,$fname,$lname,$email,$contact)
+	public function update($id,$description)
 	{
 		try
 		{
-			$stmt=$this->db->prepare("UPDATE tbl_users SET first_name=:fname, 
-		                                               last_name=:lname, 
-													   email_id=:email, 
-													   contact_no=:contact
+			$stmt=$this->db->prepare("UPDATE lkup_hazard SET description=:description
 													WHERE id=:id ");
-			$stmt->bindparam(":fname",$fname);
-			$stmt->bindparam(":lname",$lname);
-			$stmt->bindparam(":email",$email);
-			$stmt->bindparam(":contact",$contact);
+			$stmt->bindparam(":description",$description);
 			$stmt->bindparam(":id",$id);
 			$stmt->execute();
 			
@@ -64,7 +55,7 @@ class crud
 	
 	public function delete($id)
 	{
-		$stmt = $this->db->prepare("DELETE FROM tbl_users WHERE id=:id");
+		$stmt = $this->db->prepare("DELETE FROM lkup_hazard WHERE id=:id");
 		$stmt->bindparam(":id",$id);
 		$stmt->execute();
 		return true;
@@ -84,10 +75,7 @@ class crud
 				?>
                 <tr>
                 <td><?php print($row['id']); ?></td>
-                <td><?php print($row['first_name']); ?></td>
-                <td><?php print($row['last_name']); ?></td>
-                <td><?php print($row['email_id']); ?></td>
-                <td><?php print($row['contact_no']); ?></td>
+                <td><?php print($row['description']); ?></td>
                 <td align="center">
                 <a href="edit-data.php?edit_id=<?php print($row['id']); ?>"><i class="glyphicon glyphicon-edit"></i></a>
                 </td>

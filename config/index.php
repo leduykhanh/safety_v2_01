@@ -15,15 +15,12 @@ include_once 'dbconfig.php';
 	 <table class='table table-bordered table-responsive'>
      <tr>
      <th>#</th>
-     <th>First Name</th>
-     <th>Last Name</th>
-     <th>E - mail ID</th>
-     <th>Contact No</th>
+     <th>description</th>
      <th colspan="2" align="center">Actions</th>
      </tr>
      <?php
-		$query = "SELECT * FROM tbl_users";       
-		$records_per_page=3;
+		$query = "SELECT * FROM lkup_hazard";       
+		$records_per_page=10;
 		$newquery = $crud->paging($query,$records_per_page);
 		$crud->dataview($newquery);
 	 ?>

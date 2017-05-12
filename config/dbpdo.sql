@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_users`
+-- Table structure for table `lkup_hazard`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_users` (
+CREATE TABLE IF NOT EXISTS `lkup_hazard` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(25) NOT NULL,
   `last_name` varchar(25) NOT NULL,
@@ -36,10 +36,10 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
--- Dumping data for table `tbl_users`
+-- Dumping data for table `lkup_hazard`
 --
 
-INSERT INTO `tbl_users` (`id`, `first_name`, `last_name`, `email_id`, `contact_no`) VALUES
+INSERT INTO `lkup_hazard` (`id`, `first_name`, `last_name`, `email_id`, `contact_no`) VALUES
 (23, 'pradeep', 'khodke', 'pradeep@gmail.com', 9876543210),
 (24, 'sohan', 'mahamune', 'sohan@gmail.com', 9874563210),
 (25, 'john', 'doe', 'john@someone.com', 9778456123),
