@@ -1,12 +1,12 @@
 <?php
 include_once 'dbconfig.php';
 ?>
-<?php include_once 'header.php'; ?>
+<?php session_start();include_once '../header.php';include_once 'header.php'; ?>
 
 <div class="clearfix"></div>
 
 <div class="container">
-<a href="add-data.php" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add Records</a>
+<a href="add-data.php" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add Hazards</a>
 </div>
 
 <div class="clearfix"></div><br />

@@ -12,10 +12,7 @@
     <div class="container">
  
         <div class="navbar-header">
-            <a class="navbar-brand" href="http://jangkoo.com" title='Programming Blog'>Edit</a>
-            <a class="navbar-brand" href="http://jangkoo.com/search/label/CRUD">Your</a>
-            <a class="navbar-brand" href="http://jangkoo.com/search/label/PDO">Employee</a>
-            <a class="navbar-brand" href="http://jangkoo.com/search/label/jQuery">Data</a>
+            <a class="btn btn-success" href="../listwork_activity.php" title='Programming Blog'><i class="glyphicon glyphicon-arrow-left" ></i>Back to Risk Assessment</a>
         </div>
  
     </div>

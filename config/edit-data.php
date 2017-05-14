@@ -38,6 +38,9 @@ if(isset($msg))
 }
 ?>
 </div>
+<div class="container">
+<a href="add-data-risk.php?hazard_id=<?php echo $_GET['edit_id']; ?>" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add Risk Controls</a>
+</div>
 
 <div class="clearfix"></div><br />
 
@@ -56,7 +59,6 @@ if(isset($msg))
             <td>description</td>
             <td><input type='text' name='description' class='form-control' value="<?php echo $description; ?>" required></td>
         </tr>
- 
 
         <tr>
             <td colspan="2">
@@ -68,9 +70,22 @@ if(isset($msg))
         </tr>
  
     </table>
+
 </form>
-     
-     
+    <div class="row"><h2>List of risk controls</h2></div>
+    <table class='table table-bordered'>
+    	<tr>
+            <th>#</th>
+     		<th>description</th>
+            <th colspan="2" align="center">Actions</th>
+        </tr>
+	 	<?php
+			$query = "SELECT * FROM risk_control where hazard_id=" . $_GET['edit_id'];       
+			$records_per_page=10;
+			$newquery = $crud->paging($query,$records_per_page);
+			$crud->dataview_risk($newquery);
+		 ?>
+    </table>
 </div>
 
 <?php include_once 'footer.php'; ?>

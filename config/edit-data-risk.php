@@ -5,7 +5,7 @@ if(isset($_POST['btn-update']))
 	$id = $_GET['edit_id'];
 	$description = $_POST['description'];
 	
-	if($crud->update($id,$description))
+	if($crud->update_risk($id,$description))
 	{
 		$msg = "<div class='alert alert-info'>
 				<strong>WOW!</strong> Record was updated successfully <a href='index.php'>HOME</a>!
@@ -22,7 +22,7 @@ if(isset($_POST['btn-update']))
 if(isset($_GET['edit_id']))
 {
 	$id = $_GET['edit_id'];
-	extract($crud->getID($id));	
+	extract($crud->getID_risk($id));	
 }
 
 ?>

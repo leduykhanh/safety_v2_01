@@ -189,7 +189,11 @@ $afterSevenYears = date('Y-m-d H:i:s', strtotime('+3 years'));
 
 
         </div>
-
+        <div class="col-sm-5" style="padding:0px; text-align:right;">
+          <a class="btn" href="./config/">
+              <i class="fa fa-cog" ></i> Hazard Settings
+          </a>  
+        </div>
               <div class="claer-fix"></div>
     </div>
 

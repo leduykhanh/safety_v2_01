@@ -25,10 +25,36 @@ class crud
 		}
 		
 	}
+
+	public function create_risk($hazard_id,$description)
+	{
+		try
+		{
+			$stmt = $this->db->prepare("INSERT INTO risk_control(hazard_id, description) VALUES(:hazard_id, :description)");
+			$stmt->bindparam(":description",$description);
+			$stmt->bindparam(":hazard_id",$hazard_id);
+			$stmt->execute();
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+		
+	}
+	
 	
 	public function getID($id)
 	{
 		$stmt = $this->db->prepare("SELECT * FROM lkup_hazard WHERE id=:id");
+		$stmt->execute(array(":id"=>$id));
+		$editRow=$stmt->fetch(PDO::FETCH_ASSOC);
+		return $editRow;
+	}
+	public function getID_risk($id)
+	{
+		$stmt = $this->db->prepare("SELECT * FROM risk_control WHERE id=:id");
 		$stmt->execute(array(":id"=>$id));
 		$editRow=$stmt->fetch(PDO::FETCH_ASSOC);
 		return $editRow;
@@ -52,15 +78,40 @@ class crud
 			return false;
 		}
 	}
-	
+	public function update_risk($id,$description)
+	{
+		try
+		{
+			$stmt=$this->db->prepare("UPDATE risk_control SET description=:description
+													WHERE id=:id ");
+			$stmt->bindparam(":description",$description);
+			$stmt->bindparam(":id",$id);
+			$stmt->execute();
+			
+			return true;	
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+		
 	public function delete($id)
 	{
-		$stmt = $this->db->prepare("DELETE FROM lkup_hazard WHERE id=:id");
+		$stmt = $this->db->prepare("DELETE FROM lkup_hazard WHERE id=:id;DELETE FROM risk_control WHERE hazard_id=:id;");
 		$stmt->bindparam(":id",$id);
 		$stmt->execute();
 		return true;
 	}
-	
+
+	public function delete_risk($id)
+	{
+		$stmt = $this->db->prepare("DELETE FROM risk_control WHERE id=:id");
+		$stmt->bindparam(":id",$id);
+		$stmt->execute();
+		return true;
+	}	
 	/* paging */
 	
 	public function dataview($query)
@@ -78,6 +129,40 @@ class crud
                 <td><?php print($row['description']); ?></td>
                 <td align="center">
                 <a href="edit-data.php?edit_id=<?php print($row['id']); ?>"><i class="glyphicon glyphicon-edit"></i></a>
+                </td>
+                <td align="center">
+                <a href="delete.php?delete_id=<?php print($row['id']); ?>"><i class="glyphicon glyphicon-remove-circle"></i></a>
+                </td>
+                </tr>
+                <?php
+			}
+		}
+		else
+		{
+			?>
+            <tr>
+            <td>Nothing here...</td>
+            </tr>
+            <?php
+		}
+		
+	}
+
+	public function dataview_risk($query)
+	{
+		$stmt = $this->db->prepare($query);
+		$stmt->execute();
+	
+		if($stmt->rowCount()>0)
+		{
+			while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+			{
+				?>
+                <tr>
+                <td><?php print($row['id']); ?></td>
+                <td><?php print($row['description']); ?></td>
+                <td align="center">
+                <a href="edit-data-risk.php?edit_id=<?php print($row['id']); ?>"><i class="glyphicon glyphicon-edit"></i></a>
                 </td>
                 <td align="center">
                 <a href="delete.php?delete_id=<?php print($row['id']); ?>"><i class="glyphicon glyphicon-remove-circle"></i></a>
