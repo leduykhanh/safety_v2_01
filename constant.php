@@ -1,4 +1,5 @@
 <?php
+include_once 'config/dbconfig.php';
 $raMembers = array(
 	"name1" => "W. K. Chan",
 	"name2" => "Liang Kan Fat",
@@ -14,11 +15,7 @@ $raSinatures = array(
 	"name2" => "fat.png",
 );
 
-$harzard = array(
-	//General
-	"w_a_h_l" => "Working at height (using ladder)",
-
-);
+$harzard = $crud->queryToObject("SELECT * FROM lkup_hazard");
 $injury =array(
 				"0"=>"Fatality",
 				"1"=>"Multiple major injuries",
@@ -45,18 +42,8 @@ $severity = array(
 				"9"=>"2",
 				"10"=>"2"
 );
-$existing_risk_control=array(
-	"w_a_h_l" => array(
-		"0" => "Proper maintenance of the PPE to be carried out monthly",
-		"1" => "Briefing to be conducted before start of work",
-		"2" => "Buddy system to support ladder",
-		"3" => "Proper demarcation to be in placed",
-		"4" => "Opening to be fully covered",
-		"5" => "Warning signs to be provided",
-		"6" => "Inspection of ladder and PPE", 
-		"7" => "Ladder shall be inspected before use",
-		"8" => "No using the last 3 rungs of the ladder. Cover the last 3 rungs of the ladder to prevent usage.",
-		"9" => "Rubber stopper installed on ladder / Self-supporting ladders that are defect-free and skid-free must be used.", 
-		),
-	"other" => array()
-);
+
+$existing_risk_control=array();
+foreach ($harzard as $key => $value) {
+	$existing_risk_control[$key] = $crud->queryToObject("SELECT * FROM risk_control where hazard_id=". $key);
+}

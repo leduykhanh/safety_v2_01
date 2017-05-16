@@ -239,6 +239,21 @@ class crud
 		}
 	}
 	
-	/* paging */
+	public function queryToObject($query)
+	{
+		$result = array();
+		$stmt = $this->db->prepare($query);
+		$stmt->execute();
+	
+		if($stmt->rowCount()>0)
+		{
+			while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+			{
+				$result[$row["id"]] = $row['description'];
+			}
+		}
+		return $result;
+		
+	}
 	
 }
