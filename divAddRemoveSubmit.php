@@ -87,9 +87,7 @@ include_once 'constant.php';
                                 <label class="col-sm-12" for="">Risk Location</label>
                                 <input name="location" type="text" class="form-control" placeholder="Risk Location" required>
                             </div>
-<!--                             <label class="col-sm-4">Risk Location:</label>
-                            <label class="col-sm-8">
-                              <input name="location" class="span4" type="text" id="inputSaving" placeholder="" required></label> -->
+
                           </div>
 
                           <div class="col-sm-6">
@@ -97,12 +95,7 @@ include_once 'constant.php';
                                   <label class="col-sm-12" for="">Creation Date</label>
                                   <input name="creationDate" type="text" class="span4 date form-control" placeholder="Creation Date" required>
                               </div>                            
-<!--                             <label class="col-sm-4">Creation Date:</label>
-                            <label class="col-sm-8">
-                               <input name="creationDate" class="span4 date" type="text" id="creationDate" placeholder="" required></label>
 
-
-                            </label> -->
 
                           </div>
                 </div>
@@ -114,10 +107,7 @@ include_once 'constant.php';
                                   <label class="col-sm-12" for="">Risk Process</label>
                                   <input name="process" type="text" class="form-control" placeholder="Risk Process" required>
                               </div>
-<!--                               <label class="col-sm-4">Risk Process:</label>
-                              <label class="col-sm-8">
-                                <input name="process" class="span4" type="text" id="inputSaving" placeholder="" required>
-                              </label> -->
+
                             </div>
                             <div class="col-sm-6">
                               <label class="col-sm-4 compulsary">Next Review Date:</label>
@@ -433,10 +423,7 @@ include_once 'constant.php';
                             <label class="col-sm-12" for="">Work Activity</label>
                             <input name="work_activity[]" type="text" class="form-control" placeholder="Work Activity" required>
                         </div>
-<!--                         <div class="col-sm-12 form-row">
-                            <label class="col-sm-3" >Work Activity :</label>
-                            <input class="col-sm-8" type="text" id="inputSaving" name="work_activity[]" value="" placeholder="" required>
-                        </div> -->
+
                        <div class="clearfix"></div>
 
                     </div>
@@ -447,17 +434,19 @@ include_once 'constant.php';
 
                         <div class="col-sm-6 form-row">
                           <div class="form-row">
-                            <label class="col-sm-6">Hazard:</label>
-                            <select class="col-sm-6" name="Hazard[]"  onchange="get_injuery(this,this.value,'dynamic_data_control_injuery_1_1',1,1);">
-                            	<option value="">Choose Hazard</option>
-                                 <?php
-								foreach($harzard as $harzard_key => $harzard_value)
-								{
-									echo "<option value=\"".$harzard_key."\">".$harzard_value."</option>";
-								}
-								?>
+                            <label class="col-sm-12">Hazard:</label>
+                            <!-- <select class="col-sm-6" name="Hazard[]"  onchange="get_injuery(this,this.value,'dynamic_data_control_injuery_1_1',1,1);"> -->
 
-                            </select>
+                                 <?php
+                  								foreach($harzard as $harzard_key => $harzard_value)
+                  								{
+                  									echo "<div class='checkbox'>
+                                      <input type='checkbox' value=\"".$harzard_key."\">".$harzard_value."
+                                    </div>";
+                  								}
+                  								?>
+
+                            <!-- </select> -->
                                <div class="ajax_loader" style="display:none;position: absolute;right: 0;">
                                     <img src="ajax-loader.gif" />
                                 </div>
